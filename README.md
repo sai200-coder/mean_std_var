@@ -1,3 +1,5 @@
+ **Mean_var_Std Calculator**
+
 To accomplish this task, we need to create a Python function `calculate()` that takes in a list of 9 numbers, converts it into a 3x3 NumPy array, and then computes various statistical measures such as mean, variance, standard deviation, max, min, and sum along different axes and for the flattened matrix. Finally, the function should return these statistics in the form of a dictionary.
 
 Here's the step-by-step implementation:
@@ -15,36 +17,7 @@ Here's the step-by-step implementation:
 
 Here is how the implementation looks in code:
 
-```python
-import numpy as np
 
-def calculate(numbers):
-    if len(numbers) != 9:
-        raise ValueError("List must contain nine numbers.")
-    
-    # Convert the list to a 3x3 NumPy array
-    arr = np.array(numbers).reshape(3, 3)
-    
-    # Compute mean, variance, standard deviation, max, min, and sum
-    mean = [list(np.mean(arr, axis=1)), list(np.mean(arr, axis=0)), np.mean(arr)]
-    variance = [list(np.var(arr, axis=1)), list(np.var(arr, axis=0)), np.var(arr)]
-    std_deviation = [list(np.std(arr, axis=1)), list(np.std(arr, axis=0)), np.std(arr)]
-    max_val = [list(np.max(arr, axis=1)), list(np.max(arr, axis=0)), np.max(arr)]
-    min_val = [list(np.min(arr, axis=1)), list(np.min(arr, axis=0)), np.min(arr)]
-    sum_val = [list(np.sum(arr, axis=1)), list(np.sum(arr, axis=0)), np.sum(arr)]
-    
-    # Create the dictionary
-    result = {
-        'mean': mean,
-        'variance': variance,
-        'standard deviation': std_deviation,
-        'max': max_val,
-        'min': min_val,
-        'sum': sum_val
-    }
-    
-    return result
-```
 
 ### Explanation:
 
